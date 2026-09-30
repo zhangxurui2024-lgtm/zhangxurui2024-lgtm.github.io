@@ -63,7 +63,7 @@ social:
 favicon: /img/favicon.svg
 
 avatar:
-  img: /img/avatar.svg
+  img: /img/avatar.jpg
   effect: true
 
 # Disable all banner images
