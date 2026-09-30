@@ -1,0 +1,88 @@
+/* xurui's blog — blue-purple gradient extras on top of Butterfly */
+:root {
+  --grad: linear-gradient(135deg, #3b82f6 0%, #6366f1 45%, #a855f7 100%);
+  --grad-soft: linear-gradient(135deg, rgba(59,130,246,.12), rgba(168,85,247,.12));
+  --glow: 0 10px 30px -10px rgba(99, 102, 241, .45);
+}
+
+/* Soft gradient page background behind the cards */
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,.10), transparent 60%),
+    radial-gradient(900px 500px at 110% 20%, rgba(168,85,247,.10), transparent 60%),
+    #f5f6fb;
+}
+[data-theme="dark"] body { background: #0f1020; }
+
+/* Big home title: gradient-glow text */
+#site-title {
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 30px rgba(99, 102, 241, .6);
+}
+#site-subtitle { text-shadow: 0 2px 12px rgba(30, 27, 75, .6); }
+
+/* Navigation bar: frosted glass once it sticks */
+#page-header.nav-fixed #nav {
+  background: rgba(255, 255, 255, .72) !important;
+  backdrop-filter: saturate(180%) blur(14px);
+  box-shadow: 0 4px 20px -8px rgba(79, 70, 229, .35);
+}
+[data-theme="dark"] #page-header.nav-fixed #nav { background: rgba(18, 18, 36, .72) !important; }
+#nav .menus_items .menus_item > a:hover { color: #8b5cf6 !important; }
+
+/* Cards: rounded, glassy, lift on hover */
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+#post, #page, #archive, #tag, #category {
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px -12px rgba(49, 46, 129, .25);
+  border: 1px solid rgba(99, 102, 241, .10);
+}
+[data-theme="dark"] #recent-posts .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #post, [data-theme="dark"] #page { background: rgba(26, 26, 48, .85); border-color: rgba(168, 85, 247, .18); }
+
+#recent-posts .recent-post-item { transition: transform .35s ease, box-shadow .35s ease; }
+#recent-posts .recent-post-item:hover { transform: translateY(-6px); box-shadow: var(--glow); }
+#recent-posts .recent-post-item .article-title:hover { color: #8b5cf6; }
+
+/* Author card: gradient header strip + gradient button */
+#aside-content .card-info { position: relative; overflow: hidden; }
+#aside-content .card-info::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 88px;
+  background: var(--grad); opacity: .9; z-index: 0;
+}
+#aside-content .card-info > * { position: relative; z-index: 1; }
+#aside-content .card-info .avatar-img { border: 4px solid #fff; box-shadow: var(--glow); }
+#aside-content .card-info #card-info-btn,
+#aside-content .card-info .button--animated {
+  background: var(--grad) !important; border-radius: 999px; box-shadow: var(--glow);
+}
+
+/* Post headings: gradient text + underline accent */
+#article-container h2 {
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 6px; border-bottom: 2px solid rgba(139, 92, 246, .25);
+}
+#article-container h3 { color: #6366f1; }
+
+/* Tables and blockquotes */
+#article-container table thead th { background: var(--grad-soft); }
+#article-container blockquote { border-radius: 10px; }
+
+/* Pagination and tags */
+#pagination .page-number.current, #pagination .extend:hover { background: var(--grad) !important; }
+.tag-cloud-list a:hover, #aside-content .card-tag-cloud a:hover { color: #a855f7 !important; }
+
+/* Footer: gradient band */
+#footer { background: var(--grad) !important; }
+#footer::before { background: rgba(15, 16, 40, .25) !important; }
+
+/* Right-side buttons */
+#rightside > div > button, #rightside > div > a { background: var(--grad) !important; }
+
+/* Selection */
+::selection { background: #a855f7; color: #fff; }
